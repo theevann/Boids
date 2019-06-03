@@ -1,0 +1,33 @@
+body {
+  background: #000;
+  margin: 0px;
+  padding: 0px;
+  font-family: DINWeb, Helvetica, sans-serif;
+  /*overflow: hidden;*/
+}
+
+#container {
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+}
+
+ellipse {
+  fill: #fff;
+}
+
+path {
+  fill: none;
+  stroke: #fff;
+  stroke-linecap: round;
+}
+
+.mid {
+  stroke-width: 4px;
+}
+
+.tail {
+  stroke-width: 2px;
+}

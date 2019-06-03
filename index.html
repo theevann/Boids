@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="style.css" rel="stylesheet">
+        <link href="controls.css" rel="stylesheet">
+    </head>
+    <body>
+
+        <div id="container">
+            <div id="main-controls">
+            </div>
+        </div>
+
+        <script src="http://d3js.org/d3.v4.min.js"></script>
+        <script src="simu.js"></script>
+        <script src="controls.js"></script>
+        <script src="boid.js"></script>
+        <script>
+            var currentGroup = 0,
+                nGroups = 1,
+                nBoid = 15,
+                tailSize = 12,
+                maxSpeed = 1.3,
+                influenceRadius = 50,
+                showInfluence = false,
+                timeUpdateGoal = 4000,
+                lambda = 0.95,
+                coefCohes = 6,  //6
+                coefAlign = 8,  //8
+                coefSep = 10;   //10
+
+            controls = [
+                ["maxSpeed", "Speed", 0.1, 3, 0.1],
+                ["lambda", "Lambda", 0, 1, 0.01],
+                ["coefCohes", "Cohesion", 0, 30, 0.5],
+                ["coefAlign", "Alignement", 0, 30, 0.5],
+                ["coefSep", "Separation", 0, 50, 0.5],
+                ["influenceRadius", "Radius", 0, 200, 10],
+            ]
+
+            var simulation = createSimulation(nGroups);
+            createControls(controls);
+            simulation.start()
+        </script>
+    </body>
+</html>
